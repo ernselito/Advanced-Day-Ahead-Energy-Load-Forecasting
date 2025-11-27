@@ -69,3 +69,72 @@ This calculation translates the model's **RMSE** directly into potential **month
 * **xgboost**
 * **shap**
 * **scikit-learn**
+
+
+To run the repository locally, you need to follow these steps:
+
+1.  **Clone the Repository:**
+    Open your terminal or command prompt and run:
+
+    ```bash
+    git clone https://github.com/ernselito/Advanced-Day-Ahead-Energy-Load-Forecasting.git
+    cd Advanced-Day-Ahead-Energy-Load-Forecasting
+    ```
+
+2.  **Create a Virtual Environment (Recommended):**
+    It's best practice to create a virtual environment to manage dependencies.
+
+      * **Windows:**
+        ```bash
+        python -m venv venv
+        venv\Scripts\activate
+        ```
+      * **macOS/Linux:**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+
+3.  **Install Dependencies:**
+    Install the required Python packages listed in `requirements.txt`:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    *(Note: If you are on macOS, you might need to run `brew install libomp` first if you encounter errors installing XGBoost).*
+
+4.  **Run the Main Script:**
+    Execute the main pipeline script:
+
+    ```bash
+    python main.py
+    ```
+
+    This will download the data, process it, train the model, save the model artifact, and generate plots in the `figures/` directory.
+
+5.  **Run the Notebook (Optional):**
+    If you prefer to explore the code interactively, you can launch Jupyter Notebook:
+
+    ```bash
+    jupyter notebook
+    ```
+
+    Then open `Advanced_Day_Ahead_Forecasting.ipynb`.
+
+### **Troubleshooting Common Issues**
+
+  * **`ModuleNotFoundError: No module named 'src'`**: If you get this error when running `python main.py`, try running it as a module instead:
+
+    ```bash
+    python -m main
+    ```
+
+    This ensures Python treats the current directory as a package root.
+
+  * **XGBoost Errors on Mac**: As mentioned, macOS users often need OpenMP support. If `pip install xgboost` fails or runs with errors, try:
+
+    ```bash
+    brew install libomp
+    pip install xgboost
+    ```
