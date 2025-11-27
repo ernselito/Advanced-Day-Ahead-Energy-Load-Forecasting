@@ -4,7 +4,7 @@
 
 This project implements an **industry-standard machine learning pipeline** to forecast hourly energy consumption. It uses **XGBoost**, a **gradient boosting algorithm**, to predict future demand based on historical **PJM East** grid data. The focus is on creating a **production-ready framework** that includes rigorous **time-series cross-validation** and **financial impact analysis**.
 
-![Model Forecast Plot](forecast_plot.png)
+![Model Forecast Plot](figures/forecast_plot.png)
 
 ## Business Context
 
